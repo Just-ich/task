@@ -9,7 +9,7 @@ public class Main {
         age--;
         int q;
         System.out.println("Привет\nМне "+age+" лет.");
-
+        System.out.println("Всё, пока.");
 
     }
 }
