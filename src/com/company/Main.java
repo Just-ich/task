@@ -49,7 +49,8 @@ public class Main {
         System.out.print("Длина строки \"Привет группа 132\" - " + Str1.length()+ " \n" );
 
 // 11
-        str = strUpper.replaceAll(" (.{1})", "$1 ");
-        System.out.println("\n"+str);
+
+        String str1 = strUpper.replaceAll("(.{1})", "$1 ");
+        System.out.println(str1);
     }
 }
