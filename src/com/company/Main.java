@@ -1,56 +1,134 @@
 package com.company;
 
 
-import com.sun.jdi.IntegerValue;
-import com.sun.jdi.connect.Connector;
-
 public class Main {
 
     public static void main(String[] args) {
-// 1
-        Double c = Double.valueOf(5);
-        System.out.println(c);
 
-// 2
-        String s = String.valueOf(80);
-        Integer i = Integer.parseInt(s);
-        System.out.println(i);
+//#1
+        System.out.println("1. Вывести числа от 1 до 100.");
+        for (int i = 1; i <=100 ; i++) {
+            System.out.print(i+ " ");
+        }
+
+//#2
+        System.out.println("\n\n2. Вывести числа от 100 до 1.");
+        for (int q = 100; q >=1 ; q--) {
+            System.out.print(q+ " ");
+        }
+//#3
+        System.out.println("\n\n3. Вывести только чётные числа от 1 до 100.");
+        for (int w = 0; w <=100; w=w+2) {
+            System.out.print(w+" ");
+        }
+//#4
+        System.out.println("\n\n4. Вывести только нечётные числа от 100 до 1.");
+        for (int e = 99; e >=0; e=e-2) {
+            System.out.print(e+ " ");
+        }
+
+//#5
+        System.out.println("\n\n5. Вывести каждый десяток от 1 до 100.");
+        for (int r = 0; r <=100; r=r+10) {
+            System.out.print(r+ " ");
+        }
+
+//#6
+        System.out.print("\n\n6. Вывести лесенку из звёздочек. от 1 до 5 вниз");
 
 
-// 3
-        int q =Integer.parseInt("1100001001", 2);
-        System.out.println(q);
+        for (int i = 5; i >= 0; i--) {
 
-// 4
-        String w = String.valueOf(1234567890);
-        Integer w1 = Integer.parseInt(w);
-        System.out.println(w1);
+            for (int j = i; j < 5; j++) {
+                System.out.print('*'+ "  ");
+            }
 
-// 5
-        System.out.println(Integer.MAX_VALUE);
+            System.out.println( "  ");
+        }
 
-// 6
-        System.out.println(Integer.MIN_VALUE);
 
-// 7
-        System.out.println(Byte.MAX_VALUE);
+//#7
+        System.out.println("\n\n7*. Вывести таблицу умножения на 3.");
+        int p=3;
+        for (int u = 1; u <=10 ; u++) {
+            int s=u*p;
+            System.out.println(u+"*"+p+"="+s);
+        }
 
-// 8
-        System.out.println(Byte.MIN_VALUE+"\n");
+//#8
+        System.out.println("\n\n8*. Вывести всю таблицу умножения.");
 
-// 9
-        String str = "Привет группа 132";
-        String strUpper = str.toUpperCase();
-        System.out.println("Оригинал строки: " + str);
-        System.out.println("Изменение строки в верхний регистр: " + strUpper+"\n");
+        for (int g = 1; g <=10 ; g++) {
 
-// 10
-        String Str1 = new String("Привет группа 132");
-        System.out.print("Длина строки \"Привет группа 132\" - " + Str1.length()+ " \n" );
+                for (int u = 1; u <=10 ; u++) {
+                     int s=u*g;
+                     System.out.printf("%-25s" , g + " * " + u + " = " + s + "   ");
+                }
 
-// 11
+            System.out.println();
+        }
 
-        String str1 = strUpper.replaceAll("(.{1})", "$1 ");
-        System.out.println(str1);
+//#9*.
+
+        System.out.println("\n\n9*. Вывести макс и мин цифру в числе int number = 54734.");
+
+        int number = 54734;
+        byte max, min;
+        max=min=(byte)(number % 10);
+        while (number>0){
+            byte cur = (byte)(number % 10);
+            if (cur > max) {
+                max = cur;
+            }
+            if (cur < min) {
+                min = cur;
+            }
+            number /= 10;
+        }
+
+        System.out.println("Max " + max + ", min " + min);
+
+
+
+//#10
+
+        System.out.println("\n\n10*.Вывести среднее значение всех цифр в числе int number = 54734.");
+
+                int[] v = {5,4,7,3,4};
+                double summa =0;
+                for (int x : v ) {
+                    summa += x;
+                }
+                    System.out.println(summa/ v.length);
+
+
+//#11**.
+
+        System.out.println("\n\n11**. Вывести чётные и нечётные числа через while and if, int i = 345645678");
+
+
+        int z= 345645678;
+        int k=z;
+        int q =0;
+        System.out.println("Чётные: ");
+        while (z>0) {
+            q = z % 10;
+            z = z / 10;
+            if (q % 2 == 0) {
+                System.out.print(q);
+            }
+        }
+
+        System.out.println("\nНечётные: ");
+        while (k>0){
+            q = k % 10;
+            k = k / 10;
+            if ( q % 2!= 0 ){
+                System.out.print(q);
+            }
+        }
+
+
+
     }
 }
